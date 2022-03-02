@@ -1,10 +1,9 @@
-package jpabook2.book.domain;
+package jpabook2.book.book.domain;
 
 
 import lombok.Getter;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
 
 @Embeddable
 @Getter

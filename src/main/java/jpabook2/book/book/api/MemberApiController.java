@@ -1,4 +1,4 @@
-package jpabook2.book.api;
+package jpabook2.book.book.api;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,6 +1,6 @@
-package jpabook2.book.repository;
+package jpabook2.book.book.repository;
 
-import jpabook2.book.domain.Member;
+import jpabook2.book.book.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -22,12 +22,12 @@ public class MemberRepository {
     }
 
     public List<Member> findAll(){
-        return em.createQuery("select m from Member m",Member.class)
+        return em.createQuery("select m from User m",Member.class)
                 .getResultList();
     }
 
     public List<Member> findByName(String memberName){
-        return em.createQuery("select m from Member m where m.name = :memberName",Member.class)
+        return em.createQuery("select m from User m where m.name = :memberName",Member.class)
                 .setParameter("memberName",memberName)
                 .getResultList();
 
