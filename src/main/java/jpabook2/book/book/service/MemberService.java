@@ -16,21 +16,21 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     @Transactional
-    public Long join(Member member){
+    public Long join(Member member) {
         memberRepository.save(member);
         return member.getId();
     }
 
-    public List<Member> findMembers(){
+    public List<Member> findMembers() {
         return memberRepository.findAll();
     }
 
-    public Member findOne(Long memberId){
+    public Member findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
 
     @Transactional
-    public void update9(Long memberId,String name){
+    public void update9(Long memberId, String name) {
         Member member = memberRepository.findById(memberId);
         member.setName(name);
     }

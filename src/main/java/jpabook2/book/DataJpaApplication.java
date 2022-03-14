@@ -3,11 +3,11 @@ package jpabook2.book;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication
-public class BookApplication {
+@SpringBootApplication
+public class DataJpaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BookApplication.class, args);
+        SpringApplication.run(DataJpaApplication.class, args);
     }
 
 }

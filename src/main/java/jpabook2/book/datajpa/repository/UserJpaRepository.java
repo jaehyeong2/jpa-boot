@@ -14,31 +14,31 @@ public class UserJpaRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public User save(User user){
+    public User save(User user) {
         em.persist(user);
         return user;
     }
 
-    public void delete(User user){
+    public void delete(User user) {
         em.remove(user);
     }
 
-    public User find(Long id){
-        return em.find(User.class,id);
+    public User find(Long id) {
+        return em.find(User.class, id);
     }
 
-    public Optional<User> findById(Long userId){
+    public Optional<User> findById(Long userId) {
         User findUser = em.find(User.class, userId);
         return Optional.ofNullable(findUser);
     }
 
-    public long count(){
-        return em.createQuery("select count(u) from User u",Long.class)
+    public long count() {
+        return em.createQuery("select count(u) from User u", Long.class)
                 .getSingleResult();
     }
 
-    public List<User> findAll(){
-        return em.createQuery("select u from User u",User.class)
+    public List<User> findAll() {
+        return em.createQuery("select u from User u", User.class)
                 .getResultList();
     }
 }

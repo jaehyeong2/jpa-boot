@@ -5,12 +5,14 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(of = {"id","username","age"}) //team 넣으면 순홙참조
+@ToString(of = {"id", "username", "age"}) //team 넣으면 순홙참조
 public class User {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "user_id")
     private Long id;
     private String name;
@@ -20,16 +22,16 @@ public class User {
     @JoinColumn(name = "team_id")
     public Team team;
 
-    public User(String name,int age,Team team) {
+    public User(String name, int age, Team team) {
         this.name = name;
         this.age = age;
-        if (team != null){
+        if (team != null) {
             changeTeam(team);
         }
     }
-    
+
     // 연관관계 메소드
-    public void changeTeam(Team team){
+    public void changeTeam(Team team) {
         this.team = team;
         team.getUsers().add(this);
     }

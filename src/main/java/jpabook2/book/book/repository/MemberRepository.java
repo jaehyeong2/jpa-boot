@@ -13,22 +13,22 @@ public class MemberRepository {
 
     private final EntityManager em;
 
-    public void save(Member member){
+    public void save(Member member) {
         em.persist(member);
     }
 
-    public Member findById(Long memberId){
-        return em.find(Member.class,memberId);
+    public Member findById(Long memberId) {
+        return em.find(Member.class, memberId);
     }
 
-    public List<Member> findAll(){
-        return em.createQuery("select m from User m",Member.class)
+    public List<Member> findAll() {
+        return em.createQuery("select m from User m", Member.class)
                 .getResultList();
     }
 
-    public List<Member> findByName(String memberName){
-        return em.createQuery("select m from User m where m.name = :memberName",Member.class)
-                .setParameter("memberName",memberName)
+    public List<Member> findByName(String memberName) {
+        return em.createQuery("select m from User m where m.name = :memberName", Member.class)
+                .setParameter("memberName", memberName)
                 .getResultList();
 
     }
